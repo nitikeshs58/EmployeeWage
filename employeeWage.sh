@@ -4,14 +4,17 @@ wagePerHour=20
 fullTime=8
 partTime=4
 attendance=$((RANDOM%3))
-if [[ attendance -eq 0 ]]
-then
-	echo "Employee Present"
-	sal=$((wagePerHour*fullTime))
-elif [[ attendance -eq 1 ]]
-then
-	echo "Parttime emp :"
-	sal=$((wagePerHour*partTime))
-else
-	echo "Emp Absent"
-fi
+
+case $attendance in
+	0)
+		echo "Employee Present"
+		sal=$((wagePerHour*fullTime))
+		;;
+	1)
+		echo "PartTime emp"
+		sal=$((wagePerHour*partTime))
+		;;
+	2)
+		echo "Employee Absent"
+		;;
+esac
