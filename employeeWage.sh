@@ -41,6 +41,7 @@ do
 	dailyWage[$day]=$((hourPerDay*WAGE_PER_HOUR))
 	sal=$((sal+hourPerDay*WAGE_PER_HOUR));
 done
+echo ${!dailyWage[@]}
 echo ${dailyWage[@]}
 echo "Monthly Sal: " $sal
 echo "Total Working Hours: "$hour
